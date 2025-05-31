@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S. Karan - Python Django Developer</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="background-animation"></canvas>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#" class="logo">
+                    <span class="gradient-text">S. Karan</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                    <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                    <a href="#education" class="nav-link" data-section="education">Education</a>
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                    <a href="{% static 'karan resume.pdf' %}" class="btn btn-primary">Resume</a>
+                </nav>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars open-icon"></i>
+                    <i class="fas fa-times close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav hidden">
+            <div class="mobile-nav-container">
+                <a href="#about" class="mobile-nav-link" data-section="about">About</a>
+                <a href="#experience" class="mobile-nav-link" data-section="experience">Experience</a>
+                <a href="#skills" class="mobile-nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a>
+                <a href="#education" class="mobile-nav-link" data-section="education">Education</a>
+                <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+                <div class="mobile-nav-btn">
+                    <a href="{% static 'karan resume.pdf' %}" class="btn btn-primary btn-full">Resume</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="bg-gradient-radial"></div>
+            <div class="decorative-circle top-left"></div>
+            <div class="decorative-circle bottom-right"></div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text animate-fade-in">
+                        <div class="badge">Python Django Developer</div>
+                        <h1 class="gradient-text">S. Karan</h1>
+                        <h2 class="subtitle parallax" data-speed="1.5">Building digital experiences with code</h2>
+                        <p class="description parallax" data-speed="1.2">
+                            Full-stack developer with 3 years of experience specializing in
+                            Django, project management, and client interactions. Expert in
+                            building multi-tenant SaaS applications and payment integrations.
+                        </p>
+                        <div class="button-group">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Contact Me
+                            </a>
+                            <a href="#projects" class="btn btn-outline">View Projects</a>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Chennai, India</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:karan28.official@gmail.com">karan28.official@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+918124003699">+91 8124003699</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-image animate-fade-in-scale">
+                        <div class="profile-container parallax" data-speed="-1">
+                            <div class="profile-glow"></div>
+                            <div class="profile-inner">
+                                <img src="{% static 'image2.png' %}" alt="S. Karan" class="profile-img">
+                            </div>
+                            <div class="experience-badge">
+                                <div class="experience-badge-inner">
+                                    <code>3 YRS</code>
+                                </div>
+                            </div>
+
+                            <!-- Decorative circles -->
+                            <div class="decorative-circle-small top-left"></div>
+                            <div class="decorative-circle-small bottom-right"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="scroll-indicator">
+                    <a href="#about">
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="gradient-top"></div>
+            <div class="gradient-bottom"></div>
+            <div class="radial-gradient blue"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge animate-fade-in-scale">About Me</div>
+                    <h2 class="animate-fade-in">My Journey</h2>
+                    <div class="section-divider animate-width"></div>
+                </div>
+
+                <div class="about-card animate-fade-in">
+                    <p class="about-intro">
+                        Python Django Developer with <span class="highlight">3 years of experience</span> in
+                        IT, specializing in <span class="highlight">full-stack development, project management, and
+                            client
+                            interactions</span>. I have a proven track record of delivering end-to-end solutions
+                        and leading development teams to success.
+                    </p>
+
+                    <h3 class="about-subtitle">
+                        <span class="subtitle-line"></span>
+                        Areas of Expertise
+                    </h3>
+
+                    <ul class="expertise-list">
+                        <li class="expertise-item animate-fade-in-up">
+                            <div class="expertise-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span>End-to-end project execution (requirement gathering → deployment)</span>
+                        </li>
+                        <li class="expertise-item animate-fade-in-up">
+                            <div class="expertise-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <span>Multi-tenant SaaS applications (ERP, CRM, School/Hospital Management Systems)</span>
+                        </li>
+                        <li class="expertise-item animate-fade-in-up">
+                            <div class="expertise-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <span>Payment gateway integrations (Mpesa, Razorpay)</span>
+                        </li>
+                        <li class="expertise-item animate-fade-in-up">
+                            <div class="expertise-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <span>Team leadership (mentoring 10+ freshers, managing multiple projects)</span>
+                        </li>
+                        <li class="expertise-item animate-fade-in-up">
+                            <div class="expertise-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <span>On-site client collaboration (worked in Kenya for 2 months)</span>
+                        </li>
+                    </ul>
+
+                    <p class="about-quote">
+                        I am passionate about creating scalable, efficient solutions that
+                        solve real business problems. My experience spans from small
+                        projects to complex enterprise systems, with a focus on delivering
+                        high-quality code and exceptional user experiences.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="gradient-top"></div>
+            <div class="gradient-bottom"></div>
+            <div class="radial-gradient cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge animate-fade-in-scale">Career Path</div>
+                    <h2 class="animate-fade-in">Work Experience</h2>
+                    <div class="section-divider animate-width"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item animate-fade-in-up">
+                        <!-- Timeline line -->
+                        <div class="timeline-line"></div>
+
+                        <!-- Timeline dot -->
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Software Programmer (Team Lead)</h3>
+                                    <p class="company">Bharathbrads Pvt Ltd</p>
+                                </div>
+                                <div class="timeline-period">
+                                    <i class="far fa-calendar"></i>
+                                    <span>Jul 2022 – Present</span>
+                                </div>
+                            </div>
+                            <div class="timeline-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Chennai, India</span>
+                            </div>
+
+                            <div class="timeline-sections">
+                                <div class="timeline-section">
+                                    <h4>
+                                        <span class="section-line"></span>
+                                        Key Responsibilities
+                                    </h4>
+                                    <ul class="timeline-list">
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Managed multiple projects, overseeing end-to-end development from
+                                                requirement gathering to deployment.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Led a team while handling solo projects, ensuring high-quality
+                                                output.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Designed scalable, dynamic project architectures, allowing user
+                                                customizations.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Integrated payment solutions: Implemented Mpesa (Kenya) and
+                                                Razorpay.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="timeline-section">
+                                    <h4>
+                                        <span class="section-line"></span>
+                                        Client & Team Management
+                                    </h4>
+                                    <ul class="timeline-list">
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Gathered requirements, conducted project demos, and managed client
+                                                communications.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Trained 10+ freshers in Django and best practices.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="timeline-section">
+                                    <h4>
+                                        <span class="section-line"></span>
+                                        Problem Solving
+                                    </h4>
+                                    <ul class="timeline-list">
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Debugged and optimized the Visitor Management System, fixing logic
+                                                issues.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Rescued a Restaurant Management System, resolving critical
+                                                mid-development challenges.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="onsite-project">
+                                    <h4>On-Site Project (Kenya) | 2023</h4>
+                                    <p>
+                                        Worked in Nairobi for 2 months, deploying Mpesa integration and engaging with
+                                        local clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="gradient-top"></div>
+            <div class="gradient-bottom"></div>
+            <div class="radial-gradient indigo"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge animate-fade-in-scale">My Expertise</div>
+                    <h2 class="animate-fade-in">Technical Skills</h2>
+                    <div class="section-divider animate-width"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card animate-fade-in-up" style="--delay: 0.1s">
+                        <div class="skill-card-header blue"></div>
+                        <div class="skill-card-content">
+                            <h3>
+                                <span class="skill-dot blue"></span>
+                                Programming Languages
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">Bootstrap</span>
+                                <span class="skill-tag">jQuery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card animate-fade-in-up" style="--delay: 0.2s">
+                        <div class="skill-card-header cyan"></div>
+                        <div class="skill-card-content">
+                            <h3>
+                                <span class="skill-dot cyan"></span>
+                                Frameworks & Tools
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card animate-fade-in-up" style="--delay: 0.3s">
+                        <div class="skill-card-header indigo"></div>
+                        <div class="skill-card-content">
+                            <h3>
+                                <span class="skill-dot indigo"></span>
+                                Databases
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card animate-fade-in-up" style="--delay: 0.4s">
+                        <div class="skill-card-header purple"></div>
+                        <div class="skill-card-content">
+                            <h3>
+                                <span class="skill-dot purple"></span>
+                                Operating Systems
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Windows</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card animate-fade-in-up" style="--delay: 0.5s">
+                        <div class="skill-card-header green"></div>
+                        <div class="skill-card-content">
+                            <h3>
+                                <span class="skill-dot green"></span>
+                                Deployment
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PythonAnywhere</span>
+                                <span class="skill-tag">Hostinger</span>
+                                <span class="skill-tag">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card animate-fade-in-up" style="--delay: 0.6s">
+                        <div class="skill-card-header yellow"></div>
+                        <div class="skill-card-content">
+                            <h3>
+                                <span class="skill-dot yellow"></span>
+                                Additional Skills
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Team Leadership</span>
+                                <span class="skill-tag">Project Management</span>
+                                <span class="skill-tag">Client Communication</span>
+                                <span class="skill-tag">Problem Solving</span>
+                                <span class="skill-tag">Agile Methodology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="gradient-top"></div>
+            <div class="gradient-bottom"></div>
+            <div class="radial-gradient blue"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge animate-fade-in-scale">My Work</div>
+                    <h2 class="animate-fade-in">Key Projects</h2>
+                    <div class="section-divider animate-width"></div>
+                </div>
+
+                <div class="project-filters animate-fade-in">
+                    <button class="project-filter active" data-filter="all">All</button>
+                    <button class="project-filter" data-filter="django">Django</button>
+                    <button class="project-filter" data-filter="api">API</button>
+                    <button class="project-filter" data-filter="payment">Payment</button>
+                    <button class="project-filter" data-filter="management">Management</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card animate-fade-in-up" data-categories="django,management">
+                        <div class="project-card-header"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Hospital Management System (HIMS)</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">Python</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                First major project, focusing on IPD, OPD, Lab, and User Management. Gained in-depth
+                                Django expertise through hands-on development.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card highlight animate-fade-in-up" data-categories="django,management">
+                        <div class="project-card-header gradient"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>School Management System (SMS)</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">PostgreSQL</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Built from scratch using a Multi-tenant architecture. Features: Admission, Online
+                                Classes, Timetable, Exam, Live Chat, HR, CMS, and Role-based Portals. Impact: Reduced
+                                manual work by 60%.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fade-in-up" data-categories="django,management">
+                        <div class="project-card-header"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Real Estate Portal</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">JavaScript</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Users can post properties for sale/rent; features admin, landlord, and tenant portals.
+                                Integrated contract management, subscription plans, and search engine.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fade-in-up" data-categories="django,management">
+                        <div class="project-card-header"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Visitor Management System</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">Debugging</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Debugged and resolved critical logic issues, ensuring smooth functionality.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fade-in-up" data-categories="django,api">
+                        <div class="project-card-header"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>API Gateway</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">API</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Centralized 50+ company APIs with 2-step authentication. Provided a common endpoint for
+                                all project APIs.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fade-in-up" data-categories="django,payment">
+                        <div class="project-card-header"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Payment Integrations</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Mpesa</span>
+                                    <span class="project-tag">Razorpay</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Mpesa (Kenya): Integrated for a restaurant in Nairobi. Razorpay: Implemented for company
+                                products.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fade-in-up" data-categories="django,management">
+                        <div class="project-card-header"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Restaurant Management System</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">Problem Solving</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Joined mid-development, identified and resolved major issues to complete the project.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card highlight animate-fade-in-up" data-categories="django,api">
+                        <div class="project-card-header gradient"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>App Builder Tool</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">Automation</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Automated Django project generation from Excel (CRUD & API templates). Saved 40+ hours
+                                per project.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fade-in-up" data-categories="django,management">
+                        <div class="project-card-header"></div>
+                        <div class="project-card-content">
+                            <div class="project-icon-container">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Enterprise Solutions</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Django</span>
+                                    <span class="project-tag">Enterprise</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                ERP, CRM, HRMS, Legal ERP, Office Management, Supply Chain. Involved in requirement
+                                gathering, creating specifications, and leading development teams.
+                            </p>
+                            <div class="project-footer">
+                                <a href="#" class="project-link">
+                                    View Details <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="gradient-top"></div>
+            <div class="gradient-bottom"></div>
+            <div class="radial-gradient purple"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge animate-fade-in-scale">Academic Background</div>
+                    <h2 class="animate-fade-in">Education</h2>
+                    <div class="section-divider animate-width"></div>
+                </div>
+
+                <div class="education-card animate-fade-in-up">
+                    <div class="education-header"></div>
+                    <div class="education-content">
+                        <div class="education-icon-container">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-details">
+                            <h3>B.Sc Computer Science</h3>
+                            <p class="education-institution">St. Joseph Arts and Science College, Madras University</p>
+                            <div class="education-period">
+                                <i class="far fa-calendar"></i>
+                                <span>Graduated 2022</span>
+                            </div>
+
+                            <p class="education-description">
+                                Completed Bachelor of Science in Computer Science with a focus on
+                                programming fundamentals, data structures, algorithms, and
+                                software development methodologies.
+                            </p>
+
+                            <div class="education-courses">
+                                <h4>
+                                    <i class="fas fa-book-open"></i>
+                                    Key Courses
+                                </h4>
+                                <ul class="courses-list">
+                                    <li><span class="course-dot"></span>Data Structures & Algorithms</li>
+                                    <li><span class="course-dot"></span>Database Management</li>
+                                    <li><span class="course-dot"></span>Web Development</li>
+                                    <li><span class="course-dot"></span>Software Engineering</li>
+                                    <li><span class="course-dot"></span>Operating Systems</li>
+                                    <li><span class="course-dot"></span>Computer Networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="gradient-top"></div>
+            <div class="radial-gradient cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge animate-fade-in-scale">Let's Connect</div>
+                    <h2 class="animate-fade-in">Get In Touch</h2>
+                    <div class="section-divider animate-width"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-column animate-fade-in-left">
+                        <div class="contact-info-card">
+                            <div class="contact-card-header"></div>
+                            <div class="contact-card-content">
+                                <h3>
+                                    <i class="fas fa-comment"></i>
+                                    Contact Information
+                                </h3>
+
+                                <div class="contact-info-items">
+                                    <div class="contact-info-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <div>
+                                            <h4>Email</h4>
+                                            <a href="mailto:karan28.official@gmail.com">karan28.official@gmail.com</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-info-item">
+                                        <i class="fas fa-phone"></i>
+                                        <div>
+                                            <h4>Phone</h4>
+                                            <a href="tel:+918124003699">+91 8124003699</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div>
+                                            <h4>Location</h4>
+                                            <p>Chennai, India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-column animate-fade-in-right">
+                        <div class="contact-form-card">
+                            <div class="contact-card-header"></div>
+                            <div class="contact-card-content">
+                                <h3>
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Me a Message
+                                </h3>
+                                <form class="contact-form" method="post" action="{% url 'contact' %}">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" id="name" name="name" placeholder="Your name"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" name="email" placeholder="Your email"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" name="subject" placeholder="Message subject"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" name="message" placeholder="Your message"
+                                            class="form-control" rows="5"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-full">
+                                        <i class="fas fa-paper-plane"></i> Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="radial-gradient-top"></div>
+
+        <div class="container">
+            <div class="footer-content animate-fade-in">
+                <div class="footer-info">
+                    <h2 class="gradient-text">S. Karan</h2>
+                    <p>Python Django Developer</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:karan28.official@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom animate-fade-in">
+                <p>&copy; <span id="current-year"></span> S. Karan. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'scripts.js' %}"></script>
+
+</body>
+
+</html>

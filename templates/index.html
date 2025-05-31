@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muralidas M - Software Developer</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <canvas id="background-animation"></canvas>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="#" class="logo">
+          <span class="gradient-text">Muralidas M</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <a href="#about" class="nav-link" data-section="about">About</a>
+          <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+          <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+          <a href="#education" class="nav-link" data-section="education">Education</a>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+          <a href="{% static 'Muralidas_M_Resume.pdf' %}" class="btn btn-primary">Resume</a>
+        </nav>
+
+        <!-- Mobile Navigation Toggle -->
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars open-icon"></i>
+          <i class="fas fa-times close-icon hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav hidden">
+      <div class="mobile-nav-container">
+        <a href="#about" class="mobile-nav-link" data-section="about">About</a>
+        <a href="#experience" class="mobile-nav-link" data-section="experience">Experience</a>
+        <a href="#skills" class="mobile-nav-link" data-section="skills">Skills</a>
+        <a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a>
+        <a href="#education" class="mobile-nav-link" data-section="education">Education</a>
+        <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+        <div class="mobile-nav-btn">
+          <a href="{% static 'Muralidas_M_Resume.pdf' %}" class="btn btn-primary btn-full">Resume</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="bg-gradient-radial"></div>
+      <div class="decorative-circle top-left"></div>
+      <div class="decorative-circle bottom-right"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text animate-fade-in">
+            <div class="badge">Software Developer</div>
+            <h1 class="gradient-text">Muralidas M</h1>
+            <h2 class="subtitle parallax" data-speed="1.5">Building scalable solutions with robust backend</h2>
+            <p class="description parallax" data-speed="1.2">
+              Full-stack developer specializing in Django, API integration, and database optimization.
+              Experienced in delivering end-to-end solutions from requirements to deployment.
+            </p>
+            <div class="button-group">
+              <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Contact Me
+              </a>
+              <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Tirupattur, TamilNadu</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:muralidasm2002@gmail.com">muralidasm2002@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919150308937">+91 9150308937</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image animate-fade-in-scale">
+            <div class="profile-container parallax" data-speed="-1">
+              <div class="profile-glow"></div>
+              <div class="profile-inner">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D5635AQFlV7_bncdOlA/profile-framedphoto-shrink_200_200/B56ZchFXUYHoAY-/0/1748606744128?e=1749214800&v=beta&t=2TxgL3mfTRX2L-gv8DyJtOqZ9581jElwae7CXWxaPqY"
+                  alt="Muralidas M" class="profile-img">
+              </div>
+              <div class="experience-badge">
+                <div class="experience-badge-inner">
+                  <code>1.3+ YRS</code>
+                </div>
+              </div>
+
+              <!-- Decorative circles -->
+              <div class="decorative-circle-small top-left"></div>
+              <div class="decorative-circle-small bottom-right"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/muralidas03" aria-label="GitHub" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://muralidas-github.github.io/portfolio/" aria-label="Portfolio" target="_blank">
+            <i class="fas fa-globe"></i>
+          </a>
+        </div>
+
+        <div class="scroll-indicator">
+          <a href="#about">
+            <i class="fas fa-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="gradient-top"></div>
+      <div class="gradient-bottom"></div>
+      <div class="radial-gradient blue"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="badge animate-fade-in-scale">About Me</div>
+          <h2 class="animate-fade-in">My Journey</h2>
+          <div class="section-divider animate-width"></div>
+        </div>
+
+        <div class="about-card animate-fade-in">
+          <p class="about-intro">
+            Software Developer with experience in <span class="highlight">full-stack development, API integration, and
+              database optimization</span>.
+            Proven expertise in delivering end-to-end solutions from business requirement gathering to system design and
+            deployment.
+          </p>
+
+          <h3 class="about-subtitle">
+            <span class="subtitle-line"></span>
+            Areas of Expertise
+          </h3>
+
+          <ul class="expertise-list">
+            <li class="expertise-item animate-fade-in-up">
+              <div class="expertise-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <span>Full project lifecycle execution (requirements → deployment)</span>
+            </li>
+            <li class="expertise-item animate-fade-in-up">
+              <div class="expertise-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <span>Backend development with Python/Django and RESTful APIs</span>
+            </li>
+            <li class="expertise-item animate-fade-in-up">
+              <div class="expertise-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <span>Database design and optimization (MySQL, PostgreSQL)</span>
+            </li>
+            <li class="expertise-item animate-fade-in-up">
+              <div class="expertise-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <span>Cross-functional team leadership and Agile collaboration</span>
+            </li>
+            <li class="expertise-item animate-fade-in-up">
+              <div class="expertise-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <span>International client interaction (Kenya projects)</span>
+            </li>
+          </ul>
+
+          <p class="about-quote">
+            Passionate about creating scalable, efficient solutions that solve real business problems.
+            My experience spans multi-tenant ERP systems and complex management platforms,
+            with a focus on delivering high-quality backend systems and seamless frontend integration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="gradient-top"></div>
+      <div class="gradient-bottom"></div>
+      <div class="radial-gradient cyan"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="badge animate-fade-in-scale">Career Path</div>
+          <h2 class="animate-fade-in">Work Experience</h2>
+          <div class="section-divider animate-width"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item animate-fade-in-up">
+            <!-- Timeline line -->
+            <div class="timeline-line"></div>
+
+            <!-- Timeline dot -->
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3>Software Developer</h3>
+                  <p class="company">Bharathbrands Private Limited - India / Kenya</p>
+                </div>
+                <div class="timeline-period">
+                  <i class="far fa-calendar"></i>
+                  <span>May 2024 – Present</span>
+                </div>
+              </div>
+              <div class="timeline-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Tirupattur, TamilNadu (with Kenya projects)</span>
+              </div>
+
+              <div class="timeline-sections">
+                <div class="timeline-section">
+                  <h4>
+                    <span class="section-line"></span>
+                    Key Responsibilities
+                  </h4>
+                  <ul class="timeline-list">
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Delivered end-to-end solutions from business requirement gathering to system design, backend
+                        development, and deployment</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Developed RESTful APIs and backend services with focus on performance, scalability, and
+                        seamless frontend integration</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Led cross-functional teams and managed technical delivery for diverse client
+                        requirements</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Designed high-performance databases (MySQL, PostgreSQL) with optimized queries for real-time
+                        processing</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="timeline-section">
+                  <h4>
+                    <span class="section-line"></span>
+                    Client & Team Management
+                  </h4>
+                  <ul class="timeline-list">
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Coordinated Agile ceremonies (sprint planning, retrospectives), tracked progress, and
+                        ensured timely deliveries</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Conducted client demos and technical presentations to communicate progress and align on
+                        feedback</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="timeline-section">
+                  <h4>
+                    <span class="section-line"></span>
+                    Key Achievements
+                  </h4>
+                  <ul class="timeline-list">
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Spearheaded solution design with client-specific customization and business logic
+                        implementation</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i>
+                      <span>Achieved successful and timely project delivery through precise task delegation and
+                        collaboration</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="gradient-top"></div>
+      <div class="gradient-bottom"></div>
+      <div class="radial-gradient indigo"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="badge animate-fade-in-scale">My Expertise</div>
+          <h2 class="animate-fade-in">Technical Skills</h2>
+          <div class="section-divider animate-width"></div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card animate-fade-in-up" style="--delay: 0.1s">
+            <div class="skill-card-header blue"></div>
+            <div class="skill-card-content">
+              <h3>
+                <span class="skill-dot blue"></span>
+                Backend Development
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Pandas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card animate-fade-in-up" style="--delay: 0.2s">
+            <div class="skill-card-header cyan"></div>
+            <div class="skill-card-content">
+              <h3>
+                <span class="skill-dot cyan"></span>
+                Frontend Development
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card animate-fade-in-up" style="--delay: 0.3s">
+            <div class="skill-card-header indigo"></div>
+            <div class="skill-card-content">
+              <h3>
+                <span class="skill-dot indigo"></span>
+                Databases
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">SQLite3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card animate-fade-in-up" style="--delay: 0.4s">
+            <div class="skill-card-header purple"></div>
+            <div class="skill-card-content">
+              <h3>
+                <span class="skill-dot purple"></span>
+                Tools & Technologies
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Matplotlib</span>
+                <span class="skill-tag">PyCharm</span>
+                <span class="skill-tag">VS Code</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card animate-fade-in-up" style="--delay: 0.5s">
+            <div class="skill-card-header green"></div>
+            <div class="skill-card-content">
+              <h3>
+                <span class="skill-dot green"></span>
+                Methodologies
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Scrum</span>
+                <span class="skill-tag">Testing</span>
+                <span class="skill-tag">Debugging</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card animate-fade-in-up" style="--delay: 0.6s">
+            <div class="skill-card-header yellow"></div>
+            <div class="skill-card-content">
+              <h3>
+                <span class="skill-dot yellow"></span>
+                Professional Skills
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Client Interaction</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">Problem Solving</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card animate-fade-in-up" style="--delay: 0.5s">
+            <div class="skill-card-header green"></div>
+            <div class="skill-card-content">
+              <h3>
+                <span class="skill-dot green"></span>
+                Deployment
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">PythonAnywhere</span>
+                <span class="skill-tag">Hostinger</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="gradient-top"></div>
+      <div class="gradient-bottom"></div>
+      <div class="radial-gradient blue"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="badge animate-fade-in-scale">My Work</div>
+          <h2 class="animate-fade-in">Key Projects</h2>
+          <div class="section-divider animate-width"></div>
+        </div>
+
+        <div class="project-filters animate-fade-in">
+          <button class="project-filter active" data-filter="all">All</button>
+          <button class="project-filter" data-filter="django">Django</button>
+          <button class="project-filter" data-filter="erp">ERP</button>
+          <button class="project-filter" data-filter="management">Management</button>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card highlight animate-fade-in-up" data-categories="django,erp">
+            <div class="project-card-header gradient"></div>
+            <div class="project-card-content">
+              <div class="project-icon-container">
+                <i class="fas fa-gavel"></i>
+              </div>
+              <div class="project-info">
+                <h3>Lawyer ERP System</h3>
+                <div class="project-tags">
+                  <span class="project-tag">Django</span>
+                  <span class="project-tag">Multi-tenant</span>
+                  <span class="project-tag">MySQL</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Multi-tenant ERP platform to streamline law firm operations with isolated data access for multiple legal
+                branches. Includes case, client, billing, and reporting modules.
+              </p>
+              <div class="project-footer">
+                
+                <div class="project-technologies">
+                  <h4>Technologies:</h4>
+                  <p>Python, Django, JavaScript, HTML, Bootstrap, ApexCharts, MySQL, Git</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card animate-fade-in-up" data-categories="django,management">
+            <div class="project-card-header"></div>
+            <div class="project-card-content">
+              <div class="project-icon-container">
+                <i class="fas fa-school"></i>
+              </div>
+              <div class="project-info">
+                <h3>School Management System</h3>
+                <div class="project-tags">
+                  <span class="project-tag">Django</span>
+                  <span class="project-tag">Multi-tenant</span>
+                  <span class="project-tag">MySQL</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Comprehensive multi-tenant School Management System supporting multiple branches, streamlining academic
+                and administrative processes.
+              </p>
+              <div class="project-footer">
+                
+                <div class="project-technologies">
+                  <h4>Technologies:</h4>
+                  <p>Python, Django, JavaScript, HTML, Bootstrap, SQL, Git</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card highlight animate-fade-in-up" data-categories="placement">
+        <div class="project-card-header gradient"></div>
+        <div class="project-card-content">
+          <div class="project-icon-container">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="project-info">
+            <h3>College Placement Portal</h3>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">SQLite</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+          </div>
+          <p class="project-description">
+            A comprehensive placement portal connecting students with recruiters. Students can apply for jobs while HR can post opportunities and manage applications.
+          </p>
+          <div class="project-footer">
+            <div class="project-contributions">
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Dual authentication system (Student and HR login)</li>
+                <li>Student profile creation with resume upload functionality</li>
+                <li>Job posting system with categories and application deadlines</li>
+                <li>One-time application restriction per job to prevent duplicate applications</li>
+                <li>Application tracking system for both students and HR</li>
+                <li>Automated email notifications for application status updates</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <div class="gradient-top"></div>
+      <div class="gradient-bottom"></div>
+      <div class="radial-gradient purple"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="badge animate-fade-in-scale">Academic Background</div>
+          <h2 class="animate-fade-in">Education</h2>
+          <div class="section-divider animate-width"></div>
+        </div>
+
+        <div class="education-card animate-fade-in-up">
+          <div class="education-header"></div>
+          <div class="education-content">
+            <div class="education-icon-container">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="education-details">
+              <h3>Bachelor of Science (B.Sc)</h3>
+              <p class="education-institution">Sacred Heart College, Vellore, Tamil Nadu</p>
+              <div class="education-period">
+                <i class="far fa-calendar"></i>
+                <span>Graduated 2022</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="certifications-section animate-fade-in-up">
+          <h3 class="certifications-title">
+            <i class="fas fa-certificate"></i>
+            Certifications
+          </h3>
+          <div class="certifications-grid">
+            <div class="certification-card">
+              <h4>Python Full Stack Developer</h4>
+              <p class="certification-issuer">Palle Technologies • 2023</p>
+            </div>
+            <div class="certification-card">
+              <h4>International Attribution for Artificial Intelligence</h4>
+              <p class="certification-issuer">Simplilearn • 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="gradient-top"></div>
+      <div class="radial-gradient cyan"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="badge animate-fade-in-scale">Let's Connect</div>
+          <h2 class="animate-fade-in">Get In Touch</h2>
+          <div class="section-divider animate-width"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-column animate-fade-in-left">
+            <div class="contact-info-card">
+              <div class="contact-card-header"></div>
+              <div class="contact-card-content">
+                <h3>
+                  <i class="fas fa-comment"></i>
+                  Contact Information
+                </h3>
+
+                <div class="contact-info-items">
+                  <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                      <h4>Email</h4>
+                      <a href="mailto:muralidasm2002@gmail.com">muralidasm2002@gmail.com</a>
+                    </div>
+                  </div>
+
+                  <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                      <h4>Phone</h4>
+                      <a href="tel:+919150308937">+91 9150308937</a>
+                    </div>
+                  </div>
+
+                  <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <h4>Location</h4>
+                      <p>Tirupattur, TamilNadu, India</p>
+                    </div>
+                  </div>
+
+                  <div class="contact-info-item">
+                    <i class="fab fa-github"></i>
+                    <div>
+                      <h4>GitHub</h4>
+                      <a href="https://github.com/muralidas03" target="_blank">github.com/muralidas03</a>
+                    </div>
+                  </div>
+
+                  <div class="contact-info-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                      <h4>Portfolio</h4>
+                      <a href="https://muralidas-github.github.io/portfolio/" target="_blank">View Portfolio</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-column animate-fade-in-right">
+            <div class="contact-form-card">
+              <div class="contact-card-header"></div>
+              <div class="contact-card-content">
+                <h3>
+                  <i class="fas fa-paper-plane"></i>
+                  Send Me a Message
+                </h3>
+                <form class="contact-form" method="post" action="#">
+                  {% csrf_token %}
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" placeholder="Your name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="Your email" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Message subject" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message" class="form-control"
+                      rows="5"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="radial-gradient-top"></div>
+
+    <div class="container">
+      <div class="footer-content animate-fade-in">
+        <div class="footer-info">
+          <h2 class="gradient-text">Muralidas M</h2>
+          <p>Software Developer</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/muralidas03" aria-label="GitHub" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://muralidas-github.github.io/portfolio/" aria-label="Portfolio" target="_blank">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="mailto:muralidasm2002@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom animate-fade-in">
+        <p>&copy; <span id="current-year"></span> Muralidas M. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'scripts.js' %}"></script>
+
+</body>
+
+</html>
